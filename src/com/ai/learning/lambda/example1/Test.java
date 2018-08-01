@@ -1,6 +1,6 @@
 package com.ai.learning.lambda.example1;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.function.Supplier;
 
 class Test {
 
@@ -10,6 +10,9 @@ class Test {
 		test1();
 		test2();
 		test3();
+		test5();
+		test6();
+		test7();
 	}
 
 	/*
@@ -48,4 +51,41 @@ class Test {
 	{
 		smi.doSomeThing();
 	}
+	
+	
+	private void test5()
+	{
+		//Implementing interface methods with input and return values
+		SingleMethodInterface2 smi2 = (String ins) -> {
+			return ins.concat(" + concatenated string");
+		};
+		
+		//Use of default method
+		String s = smi2.doSomeThing(smi2.getSomeReadOnlyString());
+		System.out.println("From Test 5:" + s);
+	}
+	
+	//Demonstrate the inner class-ness of lambda functions 
+	String instanceVar = " + Instance variable";
+	private void test6()
+	{
+		//Implementing interface methods with input and return values
+		SingleMethodInterface2 smi2 = (String ins) -> {
+			String s = ins.concat(" + concatenated string");
+			s = s.concat(instanceVar);
+			return s;
+		};
+		
+		//Use of default method
+		String s = smi2.doSomeThing(smi2.getSomeReadOnlyString());
+		System.out.println("From Test 6:" + s);
+	}
+	
+	
+	public void test7()
+	{
+		Supplier<Integer> ip = () -> 42;
+		System.out.println("Test7: Using supplier:" + ip.get());
+	}
+
 }
