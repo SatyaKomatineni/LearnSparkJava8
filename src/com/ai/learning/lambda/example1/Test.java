@@ -12,6 +12,8 @@ class Test {
 		test3();
 		test5();
 		test6();
+		test61();
+		test62();
 		test7();
 	}
 
@@ -81,7 +83,37 @@ class Test {
 		System.out.println("From Test 6:" + s);
 	}
 	
+	//Demo target typing, where types are avoided 
+	private void test61()
+	{
+		//Implementing interface methods with input and return values
+		SingleMethodInterface2 smi2 = (ins) -> {
+			String s = ins.concat(" + concatenated string");
+			s = s.concat(instanceVar);
+			return s;
+		};
+		
+		//Use of default method
+		String s = smi2.doSomeThing(smi2.getSomeReadOnlyString());
+		System.out.println("From Test 61:" + s);
+	}
 	
+	//Demo target typing, where types are avoided
+	//Parentheses is omitted for a single argument
+	private void test62()
+	{
+		//Implementing interface methods with input and return values
+		SingleMethodInterface2 smi2 = ins -> {
+			String s = ins.concat(" + concatenated string");
+			s = s.concat(instanceVar);
+			return s;
+		};
+		
+		//Use of default method
+		String s = smi2.doSomeThing(smi2.getSomeReadOnlyString());
+		System.out.println("From Test 62:" + s);
+	}	
+
 	public void test7()
 	{
 		Supplier<Integer> ip = () -> 42;
