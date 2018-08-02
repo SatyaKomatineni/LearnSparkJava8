@@ -19,3 +19,6 @@
 9. Avoiding types and parenthesis
 10. Gentle introduction to a supplier
 
+# Key External links
+1. [Here is a learning folder for Java 8 and Lambda functions](http://www.satyakomatineni.com/akc/display?url=NotesIMPTitlesURL&ownerUserId=satya&folderId=389&order_by_format=news)
+2. [More external links on Java lambda functions](http://www.satyakomatineni.com/item/5422)
