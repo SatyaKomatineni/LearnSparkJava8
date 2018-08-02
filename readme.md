@@ -5,7 +5,8 @@
 # com.ai.learning.lambda.example1 demonstrates
 
 [You can find this package here](/src/com/ai/learning/lambda/example1)
-[The main driver class you want to see for this is here](../src/com/ai/learning/lambda/example1/Test.java)
+
+[The main driver class you want to see for this is here](/src/com/ai/learning/lambda/example1/Test.java)
  
 1. Instantiated interfaces as lambda functions. (Single method interfaces)
 2. Parameters to lambda functions
