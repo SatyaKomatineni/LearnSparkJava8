@@ -24,7 +24,7 @@
 
 [You can find this package here](/src/com/ai/learning/generics/example1)
 
-[The main driver class you want to see for this is here](/src/com/ai/learning/lambda/generics/Test.java)
+[The main driver class you want to see for this is here](/src/com/ai/learning/generics/Test.java)
 
 1. Design a generic GenericPair class with two input types
 2. See what methods can be used on generic type instance variables
