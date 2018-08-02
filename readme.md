@@ -31,7 +31,7 @@
 3. Implement a toString() method in a generic way
 4. Test a string pair
 6. Test an <string, int> pair
-7. Test basic generic methods for <?> and &lt;object&rt; 
+7. Test basic generic methods for <?> and &lt;object&gt; 
 
 # Key External links
 
