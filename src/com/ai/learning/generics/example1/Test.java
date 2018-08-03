@@ -1,6 +1,7 @@
 package com.ai.learning.generics.example1;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 class Test {
@@ -11,6 +12,9 @@ class Test {
 		test2();
 		test3();
 		test4();
+		test5();
+		test7();
+		test8();
 	}
 
 	/*
@@ -78,5 +82,96 @@ class Test {
 		c.printCollection2(stringList);
 		
 		System.out.println("Test4 ends.");
+	}
+	
+	/*
+	 * Test a generic method for derived types
+	 */
+	private void test5()
+	{
+		System.out.println("Test5 begins.");
+		Collection<Simple> simples = new ArrayList<Simple>();
+		simples.add(new Simple());
+		simples.add(new Simple());
+		
+		GenericMethodTestClass1 c = new GenericMethodTestClass1();
+		c.printAllSimples(simples);
+		
+		//You can also use the same function print the derived assets
+		Collection<Derived> children = new ArrayList<Derived>();
+		children.add(new Derived());
+		children.add(new Derived());
+		c.printAllSimples(children);
+		
+		System.out.println("Test5 ends.");
+	}
+	
+	/*
+	 * Test static variables in generics
+	 * There is only ONE class instance of a generics class!
+	 */
+	private void test6()
+	{
+		GenericPair<Integer, Integer> intPair = 
+				new GenericPair<Integer, Integer>(4,5);
+		GenericPair<String, String> stringPair = 
+				new GenericPair<String, String>("4","5");
+		
+		
+		//This is correct
+		String name = GenericPair.NAME;
+		//No such thing to get to intPair.NAME
+		//Or stringPair.NAME
+		//Nor GenericPair<Integer, Integer>.NAME
+		
+		//This is an error
+		//String name = GenericPair<Integer, Integer>.NAME;
+		
+		//So print out the name
+		System.out.println("Test6:" + name);
+	}
+	
+	/*
+	 * Understant type casting of generics
+	 * Due to the nature of a single class instance
+	 */
+	private void test7()
+	{
+		GenericPair<Integer, Integer> intPair = 
+				new GenericPair<Integer, Integer>(4,5);
+		GenericPair<String, String> stringPair = 
+				new GenericPair<String, String>("4","5");
+		
+		
+		GenericPair<Integer, Integer> intPair1;
+		GenericPair<String, String> stringPair2;
+		
+		Object stringPairObject = stringPair;
+		Object intPairObject = intPair;
+		
+		intPair1 = (GenericPair<Integer, Integer>)intPair;
+		
+		//Compiler error: Makes sense two different types
+		//intPair1 = (GenericPair<Integer, Integer>)stringPair;
+		
+		//Succeeds at compile time and run time
+		intPair1 = (GenericPair<Integer, Integer>)stringPairObject;
+		intPair1 = (GenericPair)stringPair;
+		
+		//fails at run time as getFirst() returns a string
+		//tries to convert it to an int
+		//int first = intPair1.getFirst();
+		
+		System.out.println("Test7");
+	}
+	
+	/*
+	 * Better instantiation
+	 */
+	private void test8()
+	{
+		GenericPair<Integer, Integer> intPair = 
+				new GenericPair<>(4,5);
+		System.out.println("Test8:" + intPair);
 	}
 }//eof-class

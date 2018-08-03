@@ -31,7 +31,12 @@
 3. Implement a toString() method in a generic way
 4. Test a string pair
 6. Test an <string, int> pair
-7. Test basic generic methods for <?> and &lt;object&gt; 
+7. Test basic generic methods for <?> and &lt;object&gt;
+8. Test static variables
+9. Test raw type casting of generics
+10. Test simpler (non-paranoid) syntax for geneic instantiation
+11. Test <? extends Base> approach for collections of derived classes
+12. Realize you cannot use ? outside of a <?> . 
 
 # Key External links
 
