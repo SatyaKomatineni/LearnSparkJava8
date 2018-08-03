@@ -37,6 +37,9 @@
 10. Test simpler (non-paranoid) syntax for geneic instantiation
 11. Test <? extends Base> approach for collections of derived classes
 12. Realize you cannot use ? outside of a <?> . 
+13. To provide generic adds on a list, exercise generic methods
+14. Examine instanceof generic types
+15. Examine casting of generic types
 
 # Key External links
 

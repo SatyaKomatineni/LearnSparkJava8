@@ -15,6 +15,8 @@ class Test {
 		test5();
 		test7();
 		test8();
+		test9();
+		test10();
 	}
 
 	/*
@@ -173,5 +175,80 @@ class Test {
 		GenericPair<Integer, Integer> intPair = 
 				new GenericPair<>(4,5);
 		System.out.println("Test8:" + intPair);
+	}
+	
+	/*
+	 * Test add operations on generic collections
+	 */
+	private void test9()
+	{
+		//See c.addAllSimples() mehod to see what it does
+		GenericMethodTestClass1 c = new GenericMethodTestClass1();
+		c.addAllSimplesWrong(new ArrayList<Simple>());
+		
+		Simple s = new Simple();
+		Derived d = new Derived();
+		GenericPair<Integer,Integer> intPair = new GenericPair<>(1,2);
+		
+		List<Simple> simples = new ArrayList<>();
+		c.addAllSimplesFixed(simples, s);
+		c.addAllSimplesFixed(simples, d);
+		
+		//Compiler error
+		//Method type is inferred
+		//c.addAllSimplesFixed(simples, intPair);
+		
+		List<Derived> deriveds = new ArrayList<>();
+		//fails
+		//c.addAllSimplesFixed(deriveds, s);
+		c.addAllSimplesFixed(deriveds, d);
+		
+		System.out.println("Test9:" + simples);
+	}
+	
+	private void test10()
+	{
+		//warning below
+		List stringList = new ArrayList();
+		
+		//Doesn't know a hint
+		//compile error
+		//List stringList = new ArrayList<>();
+		
+		//Assigning to a traditional list
+		//compiler warning
+		List stringList1 = new ArrayList<String>();
+		
+		//This is fine
+		List<String> stringList2 = new ArrayList<>();
+		
+		//compile error
+		//if (stringList instanceof List<String>) {}
+		
+		if (stringList instanceof List) 
+		{
+			System.out.println("Test10:Passes instance test");
+		}
+		
+		//if (stringList2 instanceof List<String>) {} 
+		if (stringList2 instanceof List) 
+		{
+			System.out.println("Test10:Passes instance test");
+		}
+		
+		//Casting: compiler warnings
+		List<String> stringList3;
+		stringList3 = (List<String>)stringList;
+		stringList3 = (List)stringList;
+		stringList3 = (List)stringList2;
+		
+		//No compiler warning
+		stringList3 = (List<String>)stringList2;
+		
+		//compiler warnings
+		Object stringList4 = stringList2;
+		stringList3 = (List<String>)stringList4;
+		stringList3 = (List)stringList4;
+
 	}
 }//eof-class

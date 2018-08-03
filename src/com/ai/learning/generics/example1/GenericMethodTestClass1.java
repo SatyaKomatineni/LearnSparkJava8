@@ -1,6 +1,8 @@
 package com.ai.learning.generics.example1;
 
+import java.security.GeneralSecurityException;
 import java.util.Collection;
+import java.util.List;
 
 public class GenericMethodTestClass1 {
 	
@@ -65,5 +67,35 @@ public class GenericMethodTestClass1 {
 			//but you can't call s.derivedf2()
 		}
 	}
+
+	/*
+	 * Test the state change methods on collections
+	 */
+	void addAllSimplesWrong(List<? extends Simple> simpleDerivedList)
+	{
+		Simple s = new Simple();
+		Derived d = new Derived();
+		Object so = s;
+		
+		//Following fails: compile error
+		//simpleDerivedList.add(s);
+		//simpleDerivedList.add(so);
+		
+		//So all adds are prevented 
+	}
+	
+	/*
+	 * Test the state change methods on collections
+	 */
+	<T> void addAllSimplesFixed(List<T> toList, T object)
+	{
+		//You cannot do this because you don't know what type the list is
+		//Simple s = new Simple();
+		//Derived d = new Derived();
+		//Object so = s;
+		//genericizedList.add(s);
+		toList.add(object);
+	}
+
 
 }//eof-class
