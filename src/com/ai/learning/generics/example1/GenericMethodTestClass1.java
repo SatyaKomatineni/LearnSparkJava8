@@ -23,6 +23,11 @@ public class GenericMethodTestClass1 {
 	  {
 		  System.out.println(e);
 	  }
+	  
+	  //This will fail although collection allows any object
+	  //This is the nature of where 
+	  //List<Object> is different from List<Apple>
+	  //c.add(new Simple());
 	}
 	
 	/*
