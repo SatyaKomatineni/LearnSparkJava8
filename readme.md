@@ -2,23 +2,6 @@
 1. To exercise and learn Jdk 8, Spark, RxJava
 2. Learn using sample code
 
-# com.ai.learning.lambda.example1 demonstrates
-
-[You can find this package here](/src/com/ai/learning/lambda/example1)
-
-[The main driver class you want to see for this is here](/src/com/ai/learning/lambda/example1/Test.java)
- 
-1. Instantiated interfaces as lambda functions. (Single method interfaces)
-2. Parameters to lambda functions
-3. Passing around lambda functions
-4. Default methods
-5. Static values in interfaces
-6. Basic syntax of Lambda functions
-7. Scope of lambda functions
-8. Target typing and type inference
-9. Avoiding types and parenthesis
-10. Gentle introduction to a supplier
-
 
 # com.ai.learning.generics.example1 demonstrates
 
@@ -40,6 +23,39 @@
 13. To provide generic adds on a list, exercise generic methods
 14. Examine instanceof generic types
 15. Examine casting of generic types
+
+# com.ai.learning.lambda.example1 demonstrates
+
+[You can find this package here](/src/com/ai/learning/lambda/example1)
+
+[The main driver class you want to see for this is here](/src/com/ai/learning/lambda/example1/Test.java)
+ 
+1. Instantiated interfaces as lambda functions. (Single method interfaces)
+2. Parameters to lambda functions
+3. Passing around lambda functions
+4. Default methods
+5. Static values in interfaces
+6. Basic syntax of Lambda functions
+7. Scope of lambda functions
+8. Target typing and type inference
+9. Avoiding types and parenthesis
+10. Gentle introduction to a supplier
+
+# com.ai.learning.lambda.example2 demonstrates
+
+[You can find this package here](/src/com/ai/learning/lambda/example2)
+
+[The main driver class you want to see for this is here](/src/com/ai/learning/lambda/example2/Test.java)
+
+1. This is an exercise in method references
+2. Use arrays to sort using lambda comparators
+3. Use lists to sort using lambda comparators
+4. Use inline lambda functions
+5. Use static method reference (Type::staticMethod)
+6. Use instance method reference (uses self as one of the arguments. Type::instMethd)
+7. Use arbitrary object instance method reference (objectRef::instUtilityMethod) 
+8. Use static methods (Type.staticMethod)
+9. Understand Supplier functional contract
 
 # Key External links
 
