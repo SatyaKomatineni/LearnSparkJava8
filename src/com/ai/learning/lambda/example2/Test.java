@@ -67,6 +67,8 @@ class Test {
 	}
 	
 	/*
+	 * Static method reference: Type::staticMethod
+	 * 
 	 * Uses a static method reference 
 	 * as a lambda function directly
 	 * This is called a method reference
@@ -94,8 +96,7 @@ class Test {
 	}
 	
 	/*
-	 * Do the sort from list directly
-	 * Method reference by an instance method 
+	 * Method reference by an instance method: (Type::instanceMethod) 
 	 * It is an instance method
 	 * but no object is around
 	 * it assumes any arbitrary object
@@ -109,8 +110,7 @@ class Test {
 	}
 	
 	/*
-	 * Do the sort from list directly
-	 * Method reference by an instance method of an object
+	 * Method reference by an instance method of an object: Object::instanceMethod
 	 * Object is specific
 	 * Notice the object::method() syntax and not
 	 * object.method() syntax.

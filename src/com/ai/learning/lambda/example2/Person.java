@@ -115,8 +115,14 @@ public class Person {
      * Supplier functional interface.
      * 
      * DEST is a type.
-     * DEST is a collection of people
-     * DEST is any type of collection
+     * Person is a type
+     * Collection<Person> is a type distinct from a Person
+     * 
+     * DEST then is an extension of the SPECIFIC type Collection<Person>
+     * So DEST can be List<Person>
+     *    Set<Person>
+     *    etc...
+     *    
      */
     public static <DEST extends Collection<Person> >
     DEST transferPeopleTo(Collection<Person> peopleCollection, 
