@@ -1,10 +1,12 @@
 package com.ai.learning.lambda.example2;
 
+import java.time.chrono.IsoChronology;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Consumer;
 
 class Test {
 
@@ -18,6 +20,7 @@ class Test {
 		test5();
 		test6();
 		test7();
+		test8();
 	}
 
 	/*
@@ -133,5 +136,37 @@ class Test {
 		
 		System.out.println("Test7: as a list" + newPeopleList);
 		System.out.println("Test7: as a set" + newPeopleSet);
+	}
+	
+	//To test default methods that can be used
+	//to intercept or alter the original behavior.
+	private void test8()
+	{
+		//Get a function that can create a person
+		FIPersonCreator2 fip = (Person::new);
+		
+		//What do you want once the person is created
+		//say that
+		Consumer<Person> cp = (p) -> {
+			System.out.println("From Test8: " + p);
+		};
+		
+		//Now you can do this
+		//Notice that the person is printed
+		//every time it is created
+		Person person = createPerson(fip.afterThat(cp));
+		System.out.println("From Test8: at the end:" + person);
+		
+		//afterThat returns the same interface as "fip"
+		//and hides the original "fip" in the belly
+	}
+	
+	//Used by test8()
+	private Person createPerson(FIPersonCreator2 creator)
+	{
+		return creator.get("Fred",
+        		IsoChronology.INSTANCE.date(1980, 6, 20),
+        		Person.Sex.MALE,
+        		"fred@example.com");
 	}
 }//eof-class

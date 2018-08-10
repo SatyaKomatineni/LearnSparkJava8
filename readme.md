@@ -56,6 +56,8 @@
 7. Use arbitrary object instance method reference (objectRef::instUtilityMethod) 
 8. Use static methods (Type.staticMethod)
 9. Understand Supplier functional contract
+10. Show how interface default methods are used for before and after (interceptors like) functionality
+11. Show how Type::new method reference is used 
 
 # Key External links
 

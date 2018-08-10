@@ -108,6 +108,18 @@ public class Person {
             "fred@example.com");
     }
     
+    public static Person createFredWitFI() {
+    	
+    	//Get a function pointer to a suitable constructor
+    	FIPersonCreator pcFi = Person::new;
+    	
+    	//Notice the get function
+        return pcFi.get(
+        		"Fred",
+        		IsoChronology.INSTANCE.date(1980, 6, 20),
+        		Person.Sex.MALE,
+        		"fred@example.com");
+    }
     /*
      * It reads:
      * Transfer from current collection 
