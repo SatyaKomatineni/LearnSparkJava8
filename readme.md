@@ -24,7 +24,7 @@
 14. Examine instanceof generic types
 15. Examine casting of generic types
 
-# com.ai.learning.lambda.example1 demonstrates
+# com.ai.learning.lambda.example1 demonstrates: Lambda Function Basics
 
 [You can find this package here](/src/com/ai/learning/lambda/example1)
 
@@ -41,7 +41,7 @@
 9. Avoiding types and parenthesis
 10. Gentle introduction to a supplier
 
-# com.ai.learning.lambda.example2 demonstrates
+# com.ai.learning.lambda.example2 demonstrates: Method References
 
 [You can find this package here](/src/com/ai/learning/lambda/example2)
 
@@ -58,6 +58,20 @@
 9. Understand Supplier functional contract
 10. Show how interface default methods are used for before and after (interceptors like) functionality
 11. Show how Type::new method reference is used 
+
+# com.ai.learning.streams.example1 demonstrates: Streams Basics
+
+[You can find this package here](/src/com/ai/learning/streams/example1)
+
+[The main driver class you want to see for this is here](/src/com/ai/learning/streams/example1/Test.java)
+
+1. Dip the toe into streams
+2. Pipelines
+3. Source
+4. Intermediate operations/streams
+5. terminal operations
+6. Aggregate operations
+7. Reductions
 
 # Key External links
 
