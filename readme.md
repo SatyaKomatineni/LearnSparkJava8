@@ -72,6 +72,8 @@
 5. terminal operations
 6. Aggregate operations
 7. Reductions
+8. How to use a collect method with a custom collector
+9. Use Collectors.toList()
 
 # Key External links
 

@@ -1,6 +1,8 @@
 package com.ai.learning.streams.example1;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import com.ai.learning.lambda.example2.Person;
 
@@ -13,6 +15,8 @@ class Test {
 		test2();
 		test3();
 		test4();
+		test5();
+		test6();
 	}
 	
 	
@@ -81,6 +85,58 @@ class Test {
 			.getAsDouble();
 		
 		System.out.println("Test4: average age:" + average);
+	}
+	
+	/*
+	 * To demonstrate a custom collector
+	 * See NameCollector class that enables this functionality
+	 * 
+	 * Approach used by collect
+	 * 
+	 * 1. Createa new one with the Supplier interface: 
+	 * NameCollector::new
+	 * 
+	 * 2. This is also what is returned and must match
+	 * NameCollector peopleNames
+	 * 
+	 * 3. Repeatedly call NameCollector::addName(Person)
+	 * 
+	 * 4. If parallel, allow 
+	 * NameCollector::combine(NameCollector another)
+	 * to enhance the original NameCollector
+	 * 
+	 * 5. Finally return NameCollector which 
+	 * is instantiated in step 1
+	 * 
+	 */
+	private void test5()
+	{
+		Collection<Person> people =
+				Person.createRoster();
+		NameCollector peopleNames = 
+				people.stream()
+					.collect(NameCollector::new
+							,NameCollector::addName
+							,NameCollector::combine);
+		System.out.println("Test5: peoples names:" + peopleNames.names);
+					
+	}
+	
+	/*
+	 * Use the generic Collectors to do the same as aboe
+	 * 
+	 */
+	private void test6()
+	{
+		Collection<Person> people =
+				Person.createRoster();
+		List<String> peopleNames = 
+				people.stream()
+					.map(p -> p.name) //just get a stream of names
+					.collect(Collectors.toList()); //stick them in a list
+		
+		System.out.println("Test6: peoples names:" + peopleNames);
+		
 	}
 
 }//eof-class
