@@ -77,6 +77,9 @@
 8. How to use a collect method with a custom collector
 9. Use Collectors.toList()
 
+# Directory structure (Guide to Contributors)
+1. [/docs/general/readme.md] (./docs/general/readme.md)
+
 # Key External links
 
 1. [Here is a learning folder for Java 8 and Lambda functions](http://www.satyakomatineni.com/akc/display?url=NotesIMPTitlesURL&ownerUserId=satya&folderId=389&order_by_format=news)
