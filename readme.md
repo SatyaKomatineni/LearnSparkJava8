@@ -2,8 +2,8 @@
 1. To exercise and learn Jdk 8, Spark, RxJava
 2. Learn using sample code
 
-
-# com.ai.learning.generics.example1 demonstrates
+# Generics
+## com.ai.learning.generics.example1 demonstrates
 
 [You can find this package here](/src/com/ai/learning/generics/example1)
 
@@ -24,7 +24,8 @@
 14. Examine instanceof generic types
 15. Examine casting of generic types
 
-# com.ai.learning.lambda.example1 demonstrates: Lambda Function Basics
+# Lambda Functions
+## com.ai.learning.lambda.example1 demonstrates: Lambda Function Basics
 
 [You can find this package here](/src/com/ai/learning/lambda/example1)
 
@@ -41,7 +42,7 @@
 9. Avoiding types and parenthesis
 10. Gentle introduction to a supplier
 
-# com.ai.learning.lambda.example2 demonstrates: Method References
+## com.ai.learning.lambda.example2 demonstrates: Method References
 
 [You can find this package here](/src/com/ai/learning/lambda/example2)
 
@@ -59,7 +60,8 @@
 10. Show how interface default methods are used for before and after (interceptors like) functionality
 11. Show how Type::new method reference is used 
 
-# com.ai.learning.streams.example1 demonstrates: Streams Basics
+# Streams
+## com.ai.learning.streams.example1 demonstrates: Streams Basics
 
 [You can find this package here](/src/com/ai/learning/streams/example1)
 
