@@ -78,7 +78,7 @@
 9. Use Collectors.toList()
 
 # Directory structure (Guide to Contributors)
-1. [/docs/general/readme.md] (./docs/general/readme.md)
+1. [/docs/general/readme.md](./docs/general/readme.md)
 
 # Key External links
 
