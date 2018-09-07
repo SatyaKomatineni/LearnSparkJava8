@@ -77,6 +77,15 @@
 8. How to use a collect method with a custom collector
 9. Use Collectors.toList()
 
+# Concurrency
+## com.ai.learning.concurrency.example1 
+
+[You can find this package here](/src/com/ai/learning/concurrency/example1)
+
+[The main driver class you want to see for this is here](/src/com/ai/learning/concurrency/example1/Test.java)
+
+[The docs folder for concurrency is here. For now the TOC is kept here.](/docs/concurrency)
+
 # Directory structure (Guide to Contributors)
 1. [/docs/general/readme.md](./docs/general/readme.md)
 
