@@ -70,6 +70,9 @@ class Test {
 	 * lambda function
 	 * 
 	 * 17. See the Method References samples to understand this better.
+	 * 
+	 * 18. See http://satyakomatineni.com/item/5437 for more
+	 * explanation about forEach and Consumer<? super T> syntax
 	 *    
 	 */
 	private void test1()
