@@ -24,6 +24,53 @@ class Test {
 	 * Wetting the feet with streams. 
 	 * printing a collection of objects as a stream
 	 * use foreach()
+	 * 
+	 * Explanation 1
+	 * ****************
+	 * 1. A collection has a stream method
+	 * 2. See Collection API for stream() method
+	 * 3. It returns a Stream<E> of objects of that type
+	 * 
+	 * 4. Stream API is available in java.util.stream package
+	 * 5. foreach() takes a Consumer<? super T> object/function
+	 * 
+	 * 6. So foreach() allows any object worker that 
+	 * that knows how to work with a person or its super class.
+	 * 
+	 * 7. In other words any utility classes
+	 * that were built before for the base classes
+	 * can be supplied here without changing them.
+	 * 
+	 * 8. this is possible only because the foreach 
+	 * function says so, allowing all base class workers
+	 * to be eligible for the compiler to allow
+	 * 
+	 * 9. In this case below, the worker is a 
+	 * lambda function so the base class argument
+	 * is not needed
+	 * 
+	 * 10. But if we had a utility function that
+	 * works with objects (base class of Person) 
+	 * we could have passed that interface in.
+	 * 
+	 * 11. Ofcourse that interface should confirm
+	 * to the Consumer<> interface.
+	 * 
+	 * 12. The Consumer<> interface has a single method signature
+	 * 
+	 * 13. Consumer has a single abstract method accept(T)
+	 * 
+	 * 14. This method below uses the anonymous lambda function
+	 * as its equivalence.
+	 * 
+	 * 15. Using a method reference any method can be used in 
+	 * its place as long as the signatures match, minus the method name.
+	 * 
+	 * 16. Method name doesn't have to match when expressed as a
+	 * lambda function
+	 * 
+	 * 17. See the Method References samples to understand this better.
+	 *    
 	 */
 	private void test1()
 	{
