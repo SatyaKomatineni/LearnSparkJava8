@@ -2,6 +2,7 @@ package com.ai.learning.streams.example1;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import com.ai.learning.lambda.example2.Person;
@@ -13,6 +14,7 @@ class Test {
 	{
 		test1();
 		test2();
+		test21();
 		test3();
 		test4();
 		test5();
@@ -86,8 +88,18 @@ class Test {
 	}
 
 	/*
-	 * Use filtering. 
+	 * Use filtering.
 	 * Uses predicate functions
+	 * 
+	 * 1. As foreacch takes a Composite<? super T>
+	 * the filter takes a "bool Predicate<? super T>"
+	 * 
+	 * 2. filter returns a stream
+	 * 
+	 * 3. Because predicate() is a function/code
+	 * any predicate that can handle a Person or its
+	 * super class Object are par for the game.
+	 * 
 	 */
 	private void test2()
 	{
@@ -100,7 +112,50 @@ class Test {
 	}
 	
 	/*
+	 * Apply additional functions on a predicate class
+	 */
+	private void test21()
+	{
+		Collection<Person> people =
+				Person.createRoster();
+		
+		Predicate<Person> femalePredicate	= (p) -> {
+			return p.gender == Person.Sex.FEMALE;
+		};
+		
+		people.stream()
+			.filter(femalePredicate.negate())
+			.forEach(p -> System.out.println("Test21: Non Females only:" + p));
+	}
+	
+	/*
 	 * Find the average age
+	 * 
+	 * 1. mapToInt returns a new stream of integers
+	 * 
+	 * 2. IntStream mapToInt(ToIntFunction<? super T>..)
+	 * 
+	 * 3. ToIntFunction returns an int
+	 * 
+	 * 4. The generic type of ToIntFunction any super type
+	 * Means any function that understands Person or 
+	 * Persons parent class Object.
+	 * 
+	 * 5. mapToInt returns an "IntStream"
+	 * 
+	 * 6. average() is available on an int stream
+	 * 
+	 * 7. it returns OptionalDouble
+	 * 
+	 * 8. OptionalDouble has a number of methods 
+	 * to see if there are no values for example.
+	 * See JDK docs for OptionalDouble
+	 * 
+	 * 9. For example getAsDobule() is one 
+	 * such function
+	 * 
+	 * 10. it throws an exception if the list is empty
+	 * 
 	 */
 	private void test3()
 	{
